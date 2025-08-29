@@ -1,67 +1,100 @@
+/* Reset some default browser styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Box Model applied */
 }
 
+/* Body and layout defaults */
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.5;
-  background-color: #ccbbbb;
+  line-height: 1.6;
+  background-color: #f5f5f5;
   color: #333;
   padding: 20px;
 }
 
-/* Header */
+/* Header with Flexbox for nav */
 header {
-  background: #e1e2e1d3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8f6f3f;
   color: white;
   padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
 }
 
-/* Navigation */
-nav ul {
+.nav-list {
   list-style: none;
   display: flex;
-  gap: 15px;
-  margin: 15px 0;
+  gap: 20px;
+  padding: 10px 0;
 }
 
-nav a {
+.nav-list a {
+  color: white;
   text-decoration: none;
-  color: #f6f7f3;
   font-weight: bold;
 }
 
-nav a:hover {
-  color: #df510f;
+.nav-list a:hover {
+  text-decoration: underline;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
+/* Main content area */
+.main-content {
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Intro section */
+.intro {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Grid section using CSS Grid */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-section {
-  background: #dbc6c6;
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-#services ul{
-    list-style: none;
-}
-#services a {
-  text-decoration: none;
-  color: #f6f7f3;
+.grid-item {
+  background-color: #e0e0e0;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
   font-weight: bold;
 }
+
+/* Footer */
 footer {
   text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  background: #e9e6e6;
-  border-radius: 4px;
+  margin-top: 40px;
+  color: #777;
+}
+
+/* Responsive Design with Media Queries */
+@media (max-width: 992px) {
+  .grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .grid-section {
+    grid-template-columns: 1fr;
+  }
 }
